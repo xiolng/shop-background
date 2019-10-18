@@ -1,0 +1,40 @@
+/*.App-logo {*/
+/*height: 40px;*/
+/*width: 40px;*/
+/*float: left;*/
+/*margin-top: 10px;*/
+/*line-height: 40px;*/
+/*text-align: center;*/
+
+/*}*/
+
+/*.App-logo img {*/
+/*width: inherit;*/
+/*height: inherit;*/
+/*animation: App-logo-spin infinite 20s linear;*/
+/*}*/
+
+.App-header{
+  min-width: 750px;
+}
+.App-logo {
+  height: 64px;
+  line-height: 64px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  float: left;
+}
+
+.App-menu {
+  margin-left: 200px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
