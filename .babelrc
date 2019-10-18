@@ -5,5 +5,8 @@
       "libraryDirectory": "es",
       "style": "css"
     }]
+  ],
+  "presets": [
+    "react-app"
   ]
 }

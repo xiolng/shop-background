@@ -2,14 +2,14 @@ export default class ColorList {
     constructor(colors, step = 5) {
         this.colors = colors
         this.step = step
-        let colorList = colors.map(v =>
+        const colorList = colors.map(v =>
             this.gradientColor(v.start, v.end, this.step)
         )
         return this.concatList(colorList)
     }
 
     concatList(list) {
-        let colorList = []
+        const colorList = []
         for (let i = 0; i < this.step; i++) {
             for (let j = 0; j < list.length; j++) {
                 colorList.push(list[j][i])
@@ -19,22 +19,22 @@ export default class ColorList {
     }
 
     gradientColor(startColor, endColor, step) {
-        let startRGB = this.colorsRgb(startColor)
-        let startR = startRGB[0]
-        let startG = startRGB[1]
-        let startB = startRGB[2]
-        let endRGB = this.colorsRgb(endColor)
-        let endR = endRGB[0]
-        let endG = endRGB[1]
-        let endB = endRGB[2]
+        const startRGB = this.colorsRgb(startColor)
+        const startR = startRGB[0]
+        const startG = startRGB[1]
+        const startB = startRGB[2]
+        const endRGB = this.colorsRgb(endColor)
+        const endR = endRGB[0]
+        const endG = endRGB[1]
+        const endB = endRGB[2]
 
-        let sR = (endR - startR) / step
-        let sG = (endG - startG) / step
-        let sB = (endB - startB) / step
+        const sR = (endR - startR) / step
+        const sG = (endG - startG) / step
+        const sB = (endB - startB) / step
 
         const colorArr = []
         for (let i = 0; i < step; i++) {
-            let hex = this.colorsHex(
+            const hex = this.colorsHex(
                 "rgb(" +
           parseInt(sR * i + startR) +
           "," +
@@ -59,7 +59,7 @@ export default class ColorList {
                 }
                 lowColor = newColor
             }
-            let hiColor = []
+            const hiColor = []
             for (let i = 1; i < 7; i += 2) {
                 hiColor.push(parseInt("0x" + lowColor.slice(i, i + 2)))
             }
@@ -70,10 +70,10 @@ export default class ColorList {
     }
 
     colorsHex(colors) {
-        let _this = colors
-        let reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/
+        const _this = colors
+        const reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/
         if (/^(rgb|RGB)/.test(_this)) {
-            let aColor = _this.replace(/(?:(|)|rgb|RGB)*/g, "").split(",")
+            const aColor = _this.replace(/(?:(|)|rgb|RGB)*/g, "").split(",")
             let strHex = "#"
             for (let i = 0; i < aColor.length; i++) {
                 let hex = Number(aColor[i]).toString(16)
@@ -88,7 +88,7 @@ export default class ColorList {
             }
             return strHex
         } else if (reg.test(_this)) {
-            let aNum = _this.replace(/#/, "").split("")
+            const aNum = _this.replace(/#/, "").split("")
             if (aNum.length === 6) {
                 return _this
             } else if (aNum.length === 3) {

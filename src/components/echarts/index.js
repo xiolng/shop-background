@@ -53,7 +53,7 @@ class Echarts extends Component {
     }
 
     async renderEcharts(myEchart) {
-        let option = require("./type")[this.props.type](this.props.ecData)
+        const option = require("./type")[this.props.type](this.props.ecData)
         // option.color = new ColorList(colors, 5)
         await myEchart.setOption(option, true)
     }
